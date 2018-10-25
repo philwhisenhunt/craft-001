@@ -1,0 +1,21 @@
+{% block main %} 
+    <main role="main" class="inner cover">
+        
+        {% for entry in craft.entries.section('blog').limit(10).all() %}
+            <a href="{{ entry.url }}"></a>
+
+            <h1> {{ entry.title}} </h1>
+
+            <h2> {{ entry.blogIntroduction }} </h2>
+
+            {{ entry.blogBody }}
+
+            <a href="#"> {{ entry.author }} </a>
+
+            {{ entry.postDate | date('M d, Y') }}
+
+        {% endfor %}
+        
+    </main>
+
+{% endblock %}

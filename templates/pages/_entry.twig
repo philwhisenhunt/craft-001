@@ -1,0 +1,25 @@
+
+{% extends '_layout' %} 
+
+{% block main %} 
+    <main role="main" class="inner cover">
+        
+
+        {% for entry in craft.entries.section('pages').limit(10).all() %}
+            
+            <a href="{{ entry.url }}">
+
+            <h1> {{ entry.title}} </h1>
+
+            </a>
+
+            {{ entry.pageCopy }}
+         {% endfor %}
+
+          
+     
+    </main>
+
+
+
+      {% endblock %}
