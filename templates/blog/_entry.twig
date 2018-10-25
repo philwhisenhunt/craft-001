@@ -1,31 +1,21 @@
 {% block main %} 
-  <main role="main" class="inner cover">
-        {# <h1 class="cover-heading">The Lamp Post Listener</h1>
-        <p class="lead">Journey Through CS Lewis' Chronicles of Narnia</p>
-
+    <main role="main" class="inner cover">
         
-        <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Recent Episodes</a> #}
+        {% for entry in craft.entries.section('blog').limit(10).all() %}
+            <a href="{{ entry.url }}"></a>
 
-          {% for entry in craft.entries.section('blog').limit(10).all() %}
-          <a href="{{ entry.url }}"></a>
+            <h1> {{ entry.title}} </h1>
 
-          <h1> {{ entry.title}} </h1>
+            <h2> {{ entry.blogIntroduction }} </h2>
 
-          <h2> {{ entry.blogIntroduction }} </h2>
+            {{ entry.blogBody }}
 
-          {{ entry.blogBody }}
+            <a href="#"> {{ entry.author }} </a>
 
-         <a href="#"> {{ entry.author }} </a>
+            {{ entry.postDate | date('M d, Y') }}
 
-          {{ entry.postDate | date('M d, Y') }}
+        {% endfor %}
+        
+    </main>
 
-          {% endfor %}
-
-          
-     
-      </main>
-
-
-
-      {% endblock %}
+{% endblock %}
