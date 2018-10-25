@@ -21,12 +21,12 @@
 
           {{ entry.author }}
 
-          {# {{ entry.postDate | }} #}
+          {{ entry.postDate | date('M d, Y')}}
 
           {% endfor %}
 
           
-        </p>
+     
       </main>
 
 
