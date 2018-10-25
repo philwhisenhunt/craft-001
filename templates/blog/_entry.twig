@@ -12,8 +12,10 @@
 
             <a href="#"> {{ entry.author }} </a>
 
-            {{ entry.postDate | date('M d, Y') }}
+            {{ entry.postDate | date('M d, Y') }} under 
+            {% for category in entry.categories %} {{ category }}
 
+            {% endfor %}
         {% endfor %}
         
     </main>
