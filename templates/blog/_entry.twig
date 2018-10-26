@@ -4,6 +4,8 @@
        <main role="main" class="inner cover">
         
         {% for entry in craft.entries.section('blog').limit(1).all() %}
+
+        <div class="blog-content">
             <a href="{{ entry.url }}">
               <h1> {{ entry.title}} </h1>
             </a>
@@ -14,12 +16,13 @@
 
             <a href="#"> {{ entry.author }} </a>
 
-            <p>
+            <span>
                 {{ entry.postDate | date('M d, Y') }} in 
               {% for category in entry.category %} 
                    <a href="/categories/{{category.slug}}"> {{ category }} </a>
                 {% endfor %} 
-            </p>
+            </span>
+            </div>
         {% endfor %}
 
     </main>

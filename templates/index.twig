@@ -2,30 +2,34 @@
 {% extends '_layout' %} 
 
 {% block main %} 
-    <main role="main" class="inner cover">
+
+       <main role="main" class="inner cover">
         
-        {% for entry in craft.entries.section('blog').limit(10).all() %}
+        {% for entry in craft.entries.section('blog').limit(1).all() %}
+
+        <div class="blog-content">
+
             <a href="{{ entry.url }}">
               <h1> {{ entry.title}} </h1>
             </a>
 
             <h2> {{ entry.blogIntroduction }} </h2>
 
-            {{ entry.blogBody }}
-
+            <p>{{ entry.blogBody }} </p>
+             
             <a href="#"> {{ entry.author }} </a>
 
-            <p>
+            <span>
                 {{ entry.postDate | date('M d, Y') }} in 
-            {# {{entry.category}} #}
-              {% for category in entry.category %} 
-                   <a href="/categories/{{category.slug}}"> {{ category }} </a>
-                {% endfor %} 
-            </p>
+                    {% for category in entry.category %} 
+                      <a href="/categories/{{category.slug}}"> {{ category }} </a>
+                    {% endfor %} 
+            </span>
+
+        </div>
         {% endfor %}
 
     </main>
 
 
-
-      {% endblock %}
+{% endblock %}
