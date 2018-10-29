@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: rgb(60, 135, 185);
+  background-color: rgb(41, 38, 32);
 }
 
 body {
@@ -40,7 +40,8 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 60em;
+  float: right;
 }
 
 
@@ -104,4 +105,19 @@ body {
  */
 .mastfoot {
   color: rgba(255, 255, 255, .5);
+}
+
+.blog-content{
+  padding-top: 4em;
+  text-align: left;
+
+}
+
+.blog-content h2{
+  color: rgb(97, 97, 97);
+  font-size: 1em;
+}
+
+.main-content-block{
+  text-align: left;
 }
