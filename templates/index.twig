@@ -35,11 +35,19 @@
 
           {{entry.text}}
 
+          {{entry.text}}
+
           {{ entry.bloggingTextMatrix.text }}
+
+          {% for block in entry.bloggingTextMatrix %}
+          
+            {{ block.text }}
+
+          {% endfor %}
 
         {% endfor %}
 
-        {% for block in entry.matrixBlogPosts.all() %}
+        {# {% for block in entry.matrixBlogPosts.all() %}
 
           {% if block.type == "title" %}
             <h3>{{ block.title }}</h3>
@@ -49,7 +57,7 @@
             {{ block.image }}
           {% endif %} 
         
-        {% endfor %} 
+        {% endfor %}  #}
 
     </main>
 
