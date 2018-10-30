@@ -5,7 +5,7 @@
 
        <main role="main" class="inner cover">
         
-        {% for entry in craft.entries.section('blog').limit(1).all() %}
+        {# {% for entry in craft.entries.section('blog').limit(1).all() %}
 
         <div class="blog-content">
 
@@ -27,32 +27,29 @@
             </span>
 
         </div>
-        {% endfor %}
+        {% endfor %} #}
 
         {% for entry in craft.entries.section('matrixBlogPosts').limit(10).all %}
 
-        {{entry.title}}
+          {{entry.title}}
 
-        {{entry.text}}
+          {{entry.text}}
 
-        {{ entry.bloggingTextMatrix.text }}
+          {{ entry.bloggingTextMatrix.text }}
 
         {% endfor %}
 
-        {# {% for block in entry.matrixBlogPosts.all() %}
+        {% for block in entry.matrixBlogPosts.all() %}
+
           {% if block.type == "title" %}
             <h3>{{ block.title }}</h3>
-
           {% endif %}
 
-           {% if block.type == "image" %}
+          {% if block.type == "image" %}
             {{ block.image }}
-
-          {% endif %}
-          
-
-
-        {% endfor %} #}
+          {% endif %} 
+        
+        {% endfor %} 
 
     </main>
 
