@@ -41,13 +41,21 @@
 
           {% for block in entry.bloggingTextMatrix %}
           
-            {{ block.text }}
+            <p>{{ block.text }}</p>
 
           {% endfor %}
 
+
+//Looks like images in matrix fields are considered arrays
+//therefor must be looped through
+          {% for block in entry.bloggingTextMatrix %}
+            <p>{{ block.image }}</p>
+          {% endfor %}
+
+
         {% endfor %}
 
-        {# {% for block in entry.matrixBlogPosts.all() %}
+        {# {% for block in entry.bloggingTextMatrix.all() %}
 
           {% if block.type == "title" %}
             <h3>{{ block.title }}</h3>
